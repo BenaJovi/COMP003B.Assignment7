@@ -1,0 +1,46 @@
+﻿@model COMP003B.Assignment7.Models.Actor
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Actor</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ActorName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ActorName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ActorGender)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ActorGender)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ActorAge)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ActorAge)
+        </dd>
+    </dl>
+</div>
+<div class="col-md-4">
+    <h4>Movies</h4>
+    <ul>
+        @foreach (Movie Movie in ViewBag.Movies)
+        {
+            <li>@Movie.MovieName</li>
+        }
+    </ul>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.ActorId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
