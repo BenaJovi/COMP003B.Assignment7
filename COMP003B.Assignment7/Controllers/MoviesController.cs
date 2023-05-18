@@ -41,6 +41,11 @@ namespace COMP003B.Assignment7.Controllers
             {
                 return NotFound();
             }
+            ViewBag.Actors = from s in _context.Actors
+                             join e in _context.MovieActors on s.ActorId equals e.ActorId
+                             join c in _context.Movies on e.MovieId equals c.MovieId
+                             where c.MovieId == id
+                             select s;
 
             return View(movie);
         }
@@ -80,11 +85,7 @@ namespace COMP003B.Assignment7.Controllers
             {
                 return NotFound();
             }
-            var actors = from s in _context.Actors
-                           join e in _context.MovieActors on s.ActorId equals e.ActorId
-                           join c in _context.Movies on e.MovieId equals c.MovieId
-                           where c.MovieId == id
-                           select s;
+           
             return View(movie);
         }
 

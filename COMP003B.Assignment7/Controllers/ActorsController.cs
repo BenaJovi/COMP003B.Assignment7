@@ -42,7 +42,7 @@ namespace COMP003B.Assignment7.Controllers
                 return NotFound();
             }
 
-            var Movies = from s in _context.Actors
+             ViewBag.Movies = from s in _context.Actors
                           join e in _context.MovieActors on s.ActorId equals e.ActorId
                           join c in _context.Movies on e.MovieId equals c.MovieId
                          where s.ActorId == id
