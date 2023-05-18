@@ -15,7 +15,7 @@ namespace COMP003B.Assignment7.Models
         [Required]
         public string ActorGender
         { get; set; }
-
+        public virtual ICollection<MovieActor>? MovieActors { get; set; }
         public int ActorAge { get; set; }
     }
 }
