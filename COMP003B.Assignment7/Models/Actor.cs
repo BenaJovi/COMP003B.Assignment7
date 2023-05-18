@@ -18,4 +18,4 @@ namespace COMP003B.Assignment7.Models
         public virtual ICollection<MovieActor>? MovieActors { get; set; }
         public int ActorAge { get; set; }
     }
-} 
+}  
